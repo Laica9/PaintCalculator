@@ -41,11 +41,7 @@ namespace ConsoleApp1
                         Console.WriteLine(" Press R to restart the program...");
                         restart = Console.ReadLine();
                         restart = restart.ToUpper();
-
-                        if (restart == "R") ;
-                        {
-                            break;
-                        }
+                        break;
                     }
                     else
                     {
