@@ -12,6 +12,8 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             string restart = "" ;
+            string can1;
+            double selectedCan;
 
             string program;
             Console.WriteLine("Do you want to use my paint calculator? (Y/N)");
@@ -34,7 +36,6 @@ namespace ConsoleApp1
 
                 do
                 {
-
                     if (l <= 0 || w <= 0 || h <= 0)
                     {
                         Console.WriteLine("Sorry, Invalid integer.");
@@ -62,12 +63,27 @@ namespace ConsoleApp1
                         double required = squareMetersToBePainted / p;
                         double required1 = Math.Round(required, 2);
                         Console.WriteLine("You would need " + required1 + " L of paint.");
+                        Console.WriteLine("---------------------------------------------");
+                        Console.WriteLine("Please select can size (L): ");
+                        string[] cans = {"0.5","1","2.5", "5", "10" };
+                        
+                        for (int i = 0; i < cans.Length; i++)
+                        {
+                            Console.Write(cans[i] + " | ");
+                           
+                        }
+
+                        Console.WriteLine("");
+                        can1 = Console.ReadLine();
+                        selectedCan = double.Parse(can1);
+                        double cansNeeded = required1 / selectedCan;
+                        Console.WriteLine("\n You selected " + can1 + " L capacity.\n You would need " + cansNeeded + " cans.");
 
                         // required1 / container
                     }
                 } while (restart == "R");
 
-                Console.WriteLine("Would you like to use calculator again? (Y/N)");
+                Console.WriteLine("\nWould you like to use calculator again? (Y/N)");
                 program = Console.ReadLine();
                 program = program.ToUpper();
             }   
