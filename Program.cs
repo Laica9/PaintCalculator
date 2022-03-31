@@ -64,13 +64,19 @@ namespace ConsoleApp1
                         double required1 = Math.Round(required, 2);
                         Console.WriteLine("You would need " + required1 + " L of paint.");
                         Console.WriteLine("---------------------------------------------");
-                        Console.WriteLine("Please select can size (L): ");
+                        Console.WriteLine("\n Display can prices (\u00A3): ");
+                        string[] price = { "\u00A37", "\u00A312", "\u00A317", "\u00A321", "\u00A340" };
+                        for (int i = 0; i < price.Length; i++)
+                        {
+                            Console.Write(price[i] + " | ");
+                        }
+
+                        Console.WriteLine("\nPlease select can size (L): ");
                         string[] cans = {"0.5","1","2.5", "5", "10" };
                         
                         for (int i = 0; i < cans.Length; i++)
                         {
                             Console.Write(cans[i] + " | ");
-                           
                         }
 
                         Console.WriteLine("");
@@ -78,8 +84,25 @@ namespace ConsoleApp1
                         selectedCan = double.Parse(can1);
                         double cansNeeded = required1 / selectedCan;
                         Console.WriteLine("\n You selected " + can1 + " L capacity.\n You would need " + cansNeeded + " cans.");
+                        Console.WriteLine("---------------------------------------------");
 
-                        // required1 / container
+                        string[,] newArr = new string[2, 7];
+
+                        for (var j = 0; j < 7; j++)
+                        {
+                            newArr[0, j] = cans[j];
+                            newArr[1, j] = price[j];
+                        }
+
+                        var h = cans
+                        .Zip(price, (k, v) => (k, v))
+                        .ToDictionary(keySelector: kv => kv.k, elementSelector: kv => kv.v);
+
+                        // window, doors
+                        // prices
+                        // colours
+
+
                     }
                 } while (restart == "R");
 
