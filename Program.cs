@@ -77,36 +77,49 @@ namespace ConsoleApp1
                         Console.WriteLine("");
                         can1 = Console.ReadLine();
 
+
+                        selectedCan = double.Parse(can1);
+                        double cansNeeded = required1 / selectedCan;
+                        double totalPrice = 0.0;
                         switch (can1)
                         {
                             case "0.5":
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A37");
-                                double p1 = double.Parse(can1);
+                                string str1 = "7";
+                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str1);
+                                double p1 = double.Parse(str1);
+                                totalPrice = cansNeeded * p1;
                                 break;
                             case "1":
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A312");
-                                double p2 = double.Parse(can1);
+                                string str2 = "12";
+                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str2);
+                                double p2 = double.Parse(str2);
+                                totalPrice = cansNeeded * p2;
                                 break;
                             case "2.5":
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A317");
-                                double p3 = double.Parse(can1);
+                                string str3 = "17";
+                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str3);
+                                double p3 = double.Parse(str3);
+                                totalPrice = cansNeeded * p3;
                                 break;
                             case "5":
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A321");
-                                double p4 = double.Parse(can1);
+                                string str4 = "21";
+                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str4);
+                                double p4 = double.Parse(str4);
+                                totalPrice = cansNeeded * p4;
                                 break;
                             case "10":
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A340");
-                                double p5 = double.Parse(can1);
+                                string str5 = "40";
+                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str5);
+                                double p5 = double.Parse(str5);
+                                totalPrice = cansNeeded * p5;
                                 break;
                                 default: Console.WriteLine("__");
                                 break;
                         }
 
-                        selectedCan = double.Parse(can1);
-                        double cansNeeded = required1 / selectedCan;
+                        
                         Console.WriteLine("\n You selected " + can1 + " L capacity.\n You would need " + cansNeeded + " cans.");
-                        double totalPrice = cansNeeded * 
+                        Console.WriteLine("\n Total price: " + totalPrice + "\u00A3");
                         Console.WriteLine("---------------------------------------------");
 
 
