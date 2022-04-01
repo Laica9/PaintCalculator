@@ -37,6 +37,17 @@ namespace ConsoleApp1
                 Console.WriteLine("Please enter height of the wall (in meters): ");
                 string height = Console.ReadLine();
 
+                // Windows and doors
+                Console.WriteLine("Please select how many windows there are: ");
+                string windowNum = Console.ReadLine();
+                Console.WriteLine("Please enter height of the window (in meters): ");
+                string window_h = Console.ReadLine();
+                Console.WriteLine("Please enter width of the window (in meters): ");
+                string window_w = Console.ReadLine();
+                Console.WriteLine("Please select how many doors there are: ");
+                string doorNum = Console.ReadLine();
+                
+
                 double l = double.Parse(length);
                 double w = double.Parse(width);
                 double h = double.Parse(height);
