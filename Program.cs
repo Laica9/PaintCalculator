@@ -19,7 +19,7 @@ namespace ConsoleApp1
         {
             string restart = "" ;
             string can1;
-            double selectedCan;
+            double selectedCan = 0.0;
 
             string program;
             Console.WriteLine("Do you want to use my paint calculator? (Y/N)");
@@ -90,59 +90,63 @@ namespace ConsoleApp1
                         Console.WriteLine("");
                         can1 = Console.ReadLine();
 
-
-                        selectedCan = double.Parse(can1);
-                        double cansNeeded = required1 / selectedCan;
-                        double totalPrice = 0.0;
-
-                        // Show price after size can has been selected. 
-                        switch (can1)
+                        // Error handling
+                        if (cans.Contains(can1))
                         {
-                            case "0.5":
-                                string str1 = "7";
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str1);
-                                double p1 = double.Parse(str1);
-                                totalPrice = cansNeeded * p1;
-                                break;
-                            case "1":
-                                string str2 = "12";
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str2);
-                                double p2 = double.Parse(str2);
-                                totalPrice = cansNeeded * p2;
-                                break;
-                            case "2.5":
-                                string str3 = "17";
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str3);
-                                double p3 = double.Parse(str3);
-                                totalPrice = cansNeeded * p3;
-                                break;
-                            case "5":
-                                string str4 = "21";
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str4);
-                                double p4 = double.Parse(str4);
-                                totalPrice = cansNeeded * p4;
-                                break;
-                            case "10":
-                                string str5 = "40";
-                                Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str5);
-                                double p5 = double.Parse(str5);
-                                totalPrice = cansNeeded * p5;
-                                break;
-                                default: Console.WriteLine("__");
-                                break;
+                            selectedCan = double.Parse(can1);
+                            double cansNeeded = required1 / selectedCan;
+                            double totalPrice = 0.0;
+
+                            // Show price after size can has been selected. 
+                            switch (can1)
+                            {
+                                case "0.5":
+                                    string str1 = "7";
+                                    Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str1);
+                                    double p1 = double.Parse(str1);
+                                    totalPrice = cansNeeded * p1;
+                                    break;
+                                case "1":
+                                    string str2 = "12";
+                                    Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str2);
+                                    double p2 = double.Parse(str2);
+                                    totalPrice = cansNeeded * p2;
+                                    break;
+                                case "2.5":
+                                    string str3 = "17";
+                                    Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str3);
+                                    double p3 = double.Parse(str3);
+                                    totalPrice = cansNeeded * p3;
+                                    break;
+                                case "5":
+                                    string str4 = "21";
+                                    Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str4);
+                                    double p4 = double.Parse(str4);
+                                    totalPrice = cansNeeded * p4;
+                                    break;
+                                case "10":
+                                    string str5 = "40";
+                                    Console.WriteLine("Price for " + can1 + " litres per can is: \u00A3" + str5);
+                                    double p5 = double.Parse(str5);
+                                    totalPrice = cansNeeded * p5;
+                                    break;
+                                default:
+                                    Console.WriteLine("__");
+                                    break;
+                            }
+
+
+                            Console.WriteLine("\n You selected " + can1 + " L capacity.\n You would need " + cansNeeded + " cans.");
+                            Console.WriteLine("\n Total price: " + totalPrice + "\u00A3");
+                            Console.WriteLine("---------------------------------------------");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sorry, invalid option.");
                         }
 
-                        
-                        Console.WriteLine("\n You selected " + can1 + " L capacity.\n You would need " + cansNeeded + " cans.");
-                        Console.WriteLine("\n Total price: " + totalPrice + "\u00A3");
-                        Console.WriteLine("---------------------------------------------");
-
-
-
                         // window, doors
-                        // colours
-
-
+                        // colour
                     }
                 } while (restart == "R");
 
