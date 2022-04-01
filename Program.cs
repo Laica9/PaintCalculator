@@ -47,6 +47,13 @@ namespace ConsoleApp1
                 Console.WriteLine("Please select how many doors there are: ");
                 string doorNum = Console.ReadLine();
                 
+                // Standard door sizes
+                double doorwidth = 1;
+                double doorheight = 2.1;
+                double windowN = double.Parse(windowNum);
+                double doorN = double.Parse(doorNum);
+                double windowHeight = double.Parse(window_h);
+                double windowWeight = double.Parse(window_w);
 
                 double l = double.Parse(length);
                 double w = double.Parse(width);
@@ -69,7 +76,9 @@ namespace ConsoleApp1
                         double wallArea = 2 * (l + w);
                         Console.WriteLine("Total measurment: " + wallArea + "meters");
                         double roomArea = wallArea * h;
-                        Console.WriteLine("Total area: " + roomArea + " square meters");
+                        double windowedRoom = doorN * (doorheight * doorwidth) + windowN * (windowHeight * windowWeight);
+                        double totalArea = roomArea - windowedRoom;
+                        Console.WriteLine("Total area: " + totalArea + " square meters");
 
                         // Prompt user to insert number of coats
                         Console.WriteLine("Please enter number of coats: ");
