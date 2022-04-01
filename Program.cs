@@ -165,8 +165,40 @@ namespace ConsoleApp1
                             Console.WriteLine("Sorry, invalid option.");
                         }
 
-                        // window, doors
-                        // colour
+                        // Colour Quizz
+                        Console.WriteLine("Lastly, I will place you to which nation you belong from the Avara, The Last Airbender.");
+                        Console.WriteLine("Choose your colour: ");
+                        Console.WriteLine("1. Blue");
+                        Console.WriteLine("2. Green");
+                        Console.WriteLine("3. Red");
+                        Console.WriteLine("4. Gray");
+                        Console.WriteLine("Choice: ");
+                        string choice = Console.ReadLine().ToLower();
+
+                        switch (choice)
+                        {
+                            case "1":
+                                {
+                                    Console.WriteLine("Noice, you belong to water nation");
+                                    break;
+                                }
+                            case "2":
+                                {
+                                    Console.WriteLine("soil nation");
+                                    break;                             
+                                }
+                            case"3":
+                                {
+                                    Console.WriteLine("Fire nation. That's bonkers.");
+                                    break;
+                                }
+                            case "4":
+                                {
+                                    Console.WriteLine("You're BREATHtakig");
+                                    break;
+                                }
+                        }
+                        Console.WriteLine("The end");
                     }
                 } while (restart == "R");
 
