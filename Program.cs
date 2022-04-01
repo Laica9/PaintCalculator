@@ -166,7 +166,7 @@ namespace ConsoleApp1
                         }
 
                         // Colour Quizz
-                        Console.WriteLine("Lastly, I will place you to which nation you belong from the Avara, The Last Airbender.");
+                        Console.WriteLine("Lastly, I will place you to which nation you belong from the Avatar, The Last Airbender.");
                         Console.WriteLine("Choose your colour: ");
                         Console.WriteLine("1. Blue");
                         Console.WriteLine("2. Green");
@@ -194,7 +194,7 @@ namespace ConsoleApp1
                                 }
                             case "4":
                                 {
-                                    Console.WriteLine("You're BREATHtakig");
+                                    Console.WriteLine("You're BREATHtakig (air nation)");
                                     break;
                                 }
                         }
