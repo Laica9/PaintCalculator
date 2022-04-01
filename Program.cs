@@ -9,6 +9,12 @@ namespace ConsoleApp1
 {
     internal class Program
     {
+        /*  Author: Ioanna PK
+            Date: 31st March 2022
+            Program name: PaintCalculator
+            Description: A calculator to estimate the amount of paint needed per room.
+                        Displays total price as well. 
+                        This program contains feature for user input to restart or stop the program.*/
         static void Main(string[] args)
         {
             string restart = "" ;
@@ -20,9 +26,10 @@ namespace ConsoleApp1
             program = Console.ReadLine();
             program = program.ToUpper();
 
-
+            // Start Program 
             while (program == "Y")
-            {
+            {   
+                // Takes user input for wall dimensions (length, width & height)
                 Console.WriteLine("Please enter length of the wall (in meters): ");
                 string length = Console.ReadLine();
                 Console.WriteLine("Please enter width of the wall (in meters): ");
@@ -36,6 +43,7 @@ namespace ConsoleApp1
 
                 do
                 {
+                    // Error handling if user inputs invalid integer
                     if (l <= 0 || w <= 0 || h <= 0)
                     {
                         Console.WriteLine("Sorry, Invalid integer.");
@@ -46,15 +54,18 @@ namespace ConsoleApp1
                     }
                     else
                     {
+                        // Wall area calculation
                         double wallArea = 2 * (l + w);
                         Console.WriteLine("Total measurment: " + wallArea + "meters");
                         double roomArea = wallArea * h;
                         Console.WriteLine("Total area: " + roomArea + " square meters");
 
+                        // Prompt user to insert number of coats
                         Console.WriteLine("Please enter number of coats: ");
                         string coat = Console.ReadLine();
                         int c = int.Parse(coat);
 
+                        // Calculating how much paint needed
                         double squareMetersToBePainted = roomArea * c;
                         Console.WriteLine("Total area to be painted: " + squareMetersToBePainted + " square meters");
                         Console.WriteLine("Please enter paint capacity (per square meter): ");
@@ -64,7 +75,9 @@ namespace ConsoleApp1
                         double required1 = Math.Round(required, 2);
                         Console.WriteLine("You would need " + required1 + " L of paint.");
                         Console.WriteLine("---------------------------------------------");
-                        string[] price = { "\u00A37", "\u00A312", "\u00A317", "\u00A321", "\u00A340" };
+
+                        //IGNORE
+                        //string[] price = { "\u00A37", "\u00A312", "\u00A317", "\u00A321", "\u00A340" };
                       
                         Console.WriteLine("\nPlease select can size (L): ");
                         string[] cans = {"0.5","1","2.5", "5", "10" };
@@ -81,6 +94,8 @@ namespace ConsoleApp1
                         selectedCan = double.Parse(can1);
                         double cansNeeded = required1 / selectedCan;
                         double totalPrice = 0.0;
+
+                        // Show price after size can has been selected. 
                         switch (can1)
                         {
                             case "0.5":
@@ -125,7 +140,6 @@ namespace ConsoleApp1
 
 
                         // window, doors
-                        // prices
                         // colours
 
 
